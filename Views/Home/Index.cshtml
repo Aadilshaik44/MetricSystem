@@ -1,0 +1,23 @@
+﻿@model MetricSystem.Models.TemperatureValueModel
+@{
+    ViewData["Title"] = "Convert Fahrenheit to Celsius";
+}
+
+<h1>Convert Fahrenheit to Celsius</h1>
+
+<form asp-action="Index" method="post">
+    <div asp-validation-summary="All"></div>
+
+    <div>
+        <label asp-for="FahrenheitValue">Fahrenheit Value:</label>
+        <input asp-for="FahrenheitValue" />
+    </div>
+
+    <div>
+        <label>Celsius Value:</label>
+        <input value="@ViewBag.MS" readonly />
+    </div>
+
+    <button type="submit">Calculate</button>
+    <a asp-action="Index">Clear</a>
+</form>
